@@ -1,7 +1,5 @@
 import React from 'react';
 import { AppRegistry, StyleSheet, Text, View, Button, Image } from "react-native";
-import { SearchBar } from 'react-native-elements';
-
 
 const styles = StyleSheet.create({
   container: {
@@ -18,86 +16,8 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function App() {
-/*
-return (
-<View>
- <View
-      style={{
-        flexDirection: "row",
-        height: 100,
-        padding: 20,
-        margin: 20
-      }}
-    >
-
-
-                   	<Button style={{
-                   	margin: 20
-                   	}}
-                                      		title="btnmenu"
-                                       		color="#f194ff"
-                                       		onPress={() => Alert.alert('Button with adjusted color pressed')}
-                                     	/>
-                                     	<Image
-                                                style={styles.tinyLogo}
-                                                source={{
-                                                  uri: 'https://reactnative.dev/img/tiny_logo.png',
-                                                }}
-                                              />
-
-                                                   	                   	<Button style= {{
-                                                   	                   	margin: 20}}
-                                                                                          		title="btnmenu"
-                                                                                           		color="#f194ff"
-                                                                                           		onPress={() => Alert.alert('Button with adjusted color pressed')}
-                                                                                         	/>
-
-    </View>
-     <View
-          style={{
-            flexDirection: "row",
-            height: 100,
-            padding: 20
-          }}
-        >
-
-          <Text style={{
-                                   	margin: 20
-                                   	}}>Hello World!</Text>
-        </View>
-             <View
-                  style={{
-                    flexDirection: "row",
-                    margin: 20,
-                    height: 100,
-                    padding: 20
-                  }}
-                >
-                                     	<Button style={{
-                                                                   	margin: 20
-                                                                   	}}
-                                                        		title="btnmenu"
-                                                         		color="#f194ff"
-                                                         		onPress={() => Alert.alert('Button with adjusted color pressed')}
-                                                       	/>
-                                                       	<Image
-                                                                  style={styles.tinyLogo}
-                                                                  source={{
-                                                                    uri: 'https://reactnative.dev/img/tiny_logo.png',
-                                                                  }}
-                                                                />
-                  <Text style={{
-                                           	margin: 20
-                                           	}}>Hello World!</Text>
-                </View>
-
-
-</View>
-
-    );
-    */
-return (
+export default function Partenaire() {
+    return (
       <View>
        <View
             style={{
@@ -173,4 +93,5 @@ return (
 
           );
 }
+
 
