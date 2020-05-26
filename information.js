@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     paddingTop: 50,
   },
   tinyLogo: {
-  margin: 5,
+    margin: 5,
     width: 50,
     height: 50,
   },
@@ -18,83 +18,84 @@ const styles = StyleSheet.create({
 });
 
 export default function Information() {
-    return (
-      <View>
-       <View
-            style={{
-              flexDirection: "row",
-              height: 100,
-              padding: 20,
-              margin: 20
-            }}
-          >
+  return (
+    <View>
+      <View
+        style={{
+          flexDirection: "row",
+          height: 100,
+          padding: 20,
+          margin: 20
+        }}
+      >
 
 
-                         	<Button style={{
-                         	margin: 20
-                         	}}
-                                            		title="btnmenu"
-                                             		color="#f194ff"
-                                             		onPress={() => Alert.alert('Button with adjusted color pressed')}
-                                           	/>
-                                           	<Image
-                                                      style={styles.tinyLogo}
-                                                      source={{
-                                                        uri: 'https://reactnative.dev/img/tiny_logo.png',
-                                                      }}
-                                                    />
+        <Button style={{
+          margin: 20
+        }}
+          title="btnmenu"
+          color="#f194ff"
+          onPress={() => Alert.alert('Button with adjusted color pressed')}
+        />
+        <Image
+          style={styles.tinyLogo}
+          source={{
+            uri: 'https://reactnative.dev/img/tiny_logo.png',
+          }}
+        />
 
-                                                         	                   	<Button style= {{
-                                                         	                   	margin: 20}}
-                                                                                                		title="btnmenu"
-                                                                                                 		color="#f194ff"
-                                                                                                 		onPress={() => Alert.alert('Button with adjusted color pressed')}
-                                                                                               	/>
+        <Button style={{
+          margin: 20
+        }}
+          title="btnmenu"
+          color="#f194ff"
+          onPress={() => Alert.alert('Button with adjusted color pressed')}
+        />
 
-          </View>
-           <View
-                style={{
-                  flexDirection: "row",
-                  height: 100,
-                  padding: 20
-                }}
-              >
+      </View>
+      <View
+        style={{
+          flexDirection: "row",
+          height: 100,
+          padding: 20
+        }}
+      >
 
-                              <Text style={{
-                                                           	margin: 20
-                                                           	}}>bandeau infos
+        <Text style={{
+          margin: 20
+        }}>bandeau infos
                                                      </Text>
 
 
       </View>
       <View
-                      style={{
-                        flexDirection: "row",
-                        height: 100,
-                        padding: 20
-                      }}
-                    >
-<SearchBar
-        placeholder="Type Here..."
-      />
+        style={{
+          flexDirection: "row",
+          height: 100,
+          padding: 20
+        }}
+      >
+        <SearchBar
+          placeholder="Type Here..."
+        />
 
-      <Text style={{
-                                                                 	margin: 20
-                                                                 	}}>info 1
+        <Text style={{
+          margin: 20
+        }}>info 1
                                                            </Text>
 
-      <Text style={{
-                                                                 	margin: 20
-                                                                 	}}>info 2
+        <Text style={{
+          margin: 20
+        }}>info 2
                                                            </Text>
-       <Text style={{
-                                                                  	margin: 20
-                                                                  	}}>info 3
+        <Text style={{
+          margin: 20
+        }}>info 3
                                                             </Text>
-                    </View>
       </View>
+    </View>
 
-          );
+  );
 }
 
 

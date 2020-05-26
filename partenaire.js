@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     paddingTop: 50,
   },
   tinyLogo: {
-  margin: 5,
+    margin: 5,
     width: 50,
     height: 50,
   },
@@ -17,81 +17,82 @@ const styles = StyleSheet.create({
 });
 
 export default function Partenaire() {
-    return (
-      <View>
-       <View
-            style={{
-              flexDirection: "row",
-              height: 100,
-              padding: 20,
-              margin: 20
-            }}
-          >
+  return (
+    <View>
+      <View
+        style={{
+          flexDirection: "row",
+          height: 100,
+          padding: 20,
+          margin: 20
+        }}
+      >
 
 
-                         	<Button style={{
-                         	margin: 20
-                         	}}
-                                            		title="btnmenu"
-                                             		color="#f194ff"
-                                             		onPress={() => Alert.alert('Button with adjusted color pressed')}
-                                           	/>
-                                           	<Image
-                                                      style={styles.tinyLogo}
-                                                      source={{
-                                                        uri: 'https://reactnative.dev/img/tiny_logo.png',
-                                                      }}
-                                                    />
+        <Button style={{
+          margin: 20
+        }}
+          title="btnmenu"
+          color="#f194ff"
+          onPress={() => Alert.alert('Button with adjusted color pressed')}
+        />
+        <Image
+          style={styles.tinyLogo}
+          source={{
+            uri: 'https://reactnative.dev/img/tiny_logo.png',
+          }}
+        />
 
-                                                         	                   	<Button style= {{
-                                                         	                   	margin: 20}}
-                                                                                                		title="btnmenu"
-                                                                                                 		color="#f194ff"
-                                                                                                 		onPress={() => Alert.alert('Button with adjusted color pressed')}
-                                                                                               	/>
-
-          </View>
-           <View
-                style={{
-                  flexDirection: "row",
-                  height: 100,
-                  padding: 20
-                }}
-              >
-
-
-
-                <Image
-                                                                      style={styles.tinyLogo}
-                                                                      source={{
-                                                                        uri: 'https://reactnative.dev/img/tiny_logo.png',
-                                                                      }}
-                                                                    />
-
-                	<Image
-                                                                      style={styles.tinyLogo}
-                                                                      source={{
-                                                                        uri: 'https://reactnative.dev/img/tiny_logo.png',
-                                                                      }}
-                                                                    />
-
-                	<Image
-                                                                      style={styles.tinyLogo}
-                                                                      source={{
-                                                                        uri: 'https://reactnative.dev/img/tiny_logo.png',
-                                                                      }}
-                                                                    />
-                     	<Image
-                                                                           style={styles.tinyLogo}
-                                                                           source={{
-                                                                             uri: 'https://reactnative.dev/img/tiny_logo.png',
-                                                                           }}
-                                                                         />
-      </View>
+        <Button style={{
+          margin: 20
+        }}
+          title="btnmenu"
+          color="#f194ff"
+          onPress={() => Alert.alert('Button with adjusted color pressed')}
+        />
 
       </View>
+      <View
+        style={{
+          flexDirection: "row",
+          height: 100,
+          padding: 20
+        }}
+      >
 
-          );
+
+
+        <Image
+          style={styles.tinyLogo}
+          source={{
+            uri: 'https://reactnative.dev/img/tiny_logo.png',
+          }}
+        />
+
+        <Image
+          style={styles.tinyLogo}
+          source={{
+            uri: 'https://reactnative.dev/img/tiny_logo.png',
+          }}
+        />
+
+        <Image
+          style={styles.tinyLogo}
+          source={{
+            uri: 'https://reactnative.dev/img/tiny_logo.png',
+          }}
+        />
+        <Image
+          style={styles.tinyLogo}
+          source={{
+            uri: 'https://reactnative.dev/img/tiny_logo.png',
+          }}
+        />
+      </View>
+
+    </View>
+
+  );
 }
 
 
