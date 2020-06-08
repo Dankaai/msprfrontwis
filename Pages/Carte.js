@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, Text, View, Button, Image, TouchableOpacity, SafeAreaView, Dimensions, Alert, ScrollView } from "react-native";
+import { AppRegistry, StyleSheet, Text, View, Button, Image, TouchableOpacity, SafeAreaView, Dimensions, StatusBar, Alert, ScrollView } from "react-native";
 import { getCurrentFrame } from 'expo/build/AR';
 import { Left, Right, Icon } from 'native-base';
 import { Header } from 'react-native-elements';
@@ -7,19 +7,34 @@ import { Header } from 'react-native-elements';
 
 
 const window = Dimensions.get('window');
+const { height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
     container: {
-        alignItems: 'center',
+        flex: 1,
+    },
+    scrollView: {
+        backgroundColor: 'blue',
+        marginHorizontal: 20,
     },
     titleText: {
         fontSize: 40,
         fontWeight: "bold",
         color: '#EA335A',
     },
+    logo: {
+        width: 66,
+        height: 58,
+        margin: 30,
+    },
     img: {
-        width: 200,
+        width: window.width ,
         height: 200,
+    },
+    user: {
+        width: 50,
+        height: 50,
+        margin: 30,
     },
     map: {
         position: 'absolute',
@@ -31,56 +46,69 @@ const styles = StyleSheet.create({
 });
 
 class Carte extends Component {
+    state = {
+        // We don't know the size of the content initially, and the probably won't instantly try to scroll, so set the initial content height to 0
+        screenHeight: 0,
+      };
+ 
+      onContentSizeChange = (contentWidth, contentHeight) => {
+        // Save the content height in state
+        this.setState({ screenHeight: contentHeight });
+      };
     render() {
+        
+          const scrollEnabled = this.state.screenHeight > height;
         return (
 
+<SafeAreaView style={styles.container}>
+        <StatusBar barStyle="light-content" backgroundColor="#468189" />
+        <ScrollView
+          style={{ flex: 1 }}
+          contentContainerStyle={styles.scrollview}
+          scrollEnabled={scrollEnabled}
+          onContentSizeChange={this.onContentSizeChange}
+        >
 
-
-            <View style={styles.container}>
-                <Header style={styles.header}
+            <View>
+            <Header
                     leftComponent={<Icon name="menu" onPress={() => this.props.navigation.openDrawer()} />}
-                    rightComponent={<Image
-                        style={styles.logo}
-                        source={require('./../assets/logo.png')}
-                    />}
-
-
+                    centerComponent={<Image style={styles.logo} source={require('./../assets/logo.png')}/>}
+                    rightComponent={<Image style={styles.user} source={require('./../assets/users.png')}/>}
+                    containerStyle={{
+                        backgroundColor: '#EA335A',
+                        height:100,
+                        justifyContent: 'space-around',
+                      }}
                 />
+                <View style={styles.container}>
 
-                <View
-                    style={{
-                        flexDirection: "row",
-                        height: 50,
-                        width: window.width,
-                        backgroundColor: "#EA335A"
-                    }}
-
-
-                ></View>
-                <View
-                    style={{
-                        height: 60,
-                        width: window.width,
-                        backgroundColor: "#ED85A8",
-                    }}
+                    
+                    <View
+                        style={{
+                            height: 60,
+                            width: window.width,
+                            backgroundColor: "#ED85A8",
+                        }}
 
 
-                >
-                    <View style={styles.container}>
-                        <Text style={styles.titleText}>
-                            Carte
+                    >
+                        <View style={styles.container}>
+                            <Text style={styles.titleText}>
+                                Carte
         </Text>
+                        </View>
+
+
                     </View>
+                    <ScrollView>
 
 
+
+                    </ScrollView>
                 </View>
-                <ScrollView>
-
-
-
-                </ScrollView>
             </View>
-
+            </ScrollView>
+      </SafeAreaView>
         );
     }
 }

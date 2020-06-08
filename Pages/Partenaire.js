@@ -21,10 +21,20 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     color: '#75D2FA',
   },
-  img: {
-    width: 200,
-    height: 200,
-  },
+  logo: {
+    width: 66,
+    height: 58,
+    margin: 30,
+},
+img: {
+    width: 50 ,
+    height: 50,
+},
+user: {
+    width: 50,
+    height: 50,
+    margin: 30,
+},
   header:
   {
     backgroundColor: "#A0123D",
@@ -39,30 +49,19 @@ class Partenaire extends Component {
 
 
 
-      <View style={styles.container}>
-        <Header style={styles.header}
-          leftComponent={<Icon name="menu" onPress={() => this.props.navigation.openDrawer()} />}
-          rightComponent={<Image
-            style={styles.logo}
-            source={require('./../assets/logo.png')}
-          />}
+      <View>
+        <Header
+                    leftComponent={<Icon name="menu" onPress={() => this.props.navigation.openDrawer()} />}
+                    centerComponent={<Image style={styles.logo} source={require('./../assets/logo.png')}/>}
+                    rightComponent={<Image style={styles.user} source={require('./../assets/users.png')}/>}
+                    containerStyle={{
+                        backgroundColor: '#75D2FA',
+                        height:100,
+                        justifyContent: 'space-around',
+                      }}
+                />
 
 
-        />
-
-        <View
-          style={{
-            flexDirection: "row",
-            height: 50,
-            width: window.width,
-            backgroundColor: "#75D2FA"
-          }}
-
-
-        >
-
-
-        </View>
         <View
           style={{
             height: 60,

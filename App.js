@@ -247,6 +247,7 @@ import { Text, View, SafeAreaView, ScrollView, Dimensions, StyleSheet, Image } f
 import { createAppContainer } from 'react-navigation';
 import { Icon } from 'native-base';
 import HomePage from './Pages/HomePage';
+import Artiste from './Pages/Artiste';
 import InformationsPage from './Pages/InformationsPage';
 import Carte from './Pages/Carte';
 import Photos from './Pages/Photos';
@@ -309,7 +310,7 @@ const Drawer = createDrawerNavigator({
       headerTitle: 'Home',
       headerTintColor: '#A0123D',
           headerStyle: {
-            backgroundColor: '#2F95D6',
+            backgroundColor: '#A0123D',
             borderBottomColor: '#A0123D',
             borderBottomWidth: 3,
           },
@@ -327,7 +328,7 @@ const Drawer = createDrawerNavigator({
     },
     headerTintColor: '#A0123D',
           headerStyle: {
-            backgroundColor: '#2F95D6',
+            backgroundColor: '#A0123D',
             borderBottomColor: '#A0123D',
             borderBottomWidth: 3,
           },
@@ -356,6 +357,12 @@ const Drawer = createDrawerNavigator({
       headerTitle: 'Billeterie'
     }
   },
+  Artiste:{
+    screen: Artiste,
+    navigationOptions: {
+      headerTitle: 'Artiste'
+    }
+  },
   Partenaire: {
     screen: Partenaire,
     navigationOptions: {
@@ -370,6 +377,7 @@ const Drawer = createDrawerNavigator({
   }
   
 },
+
   {
     drawerPosition: 'left',
     contentComponent: CustomDrawerNavigation,

@@ -17,10 +17,19 @@ class InformationsPage extends Component {
         const { searchQuery } = this.state;
         return (
             <View>
+                <Header
+                    leftComponent={<Icon name="menu" onPress={() => this.props.navigation.openDrawer()} />}
+                    centerComponent={<Image style={styles.logo} source={require('./../assets/logo.png')}/>}
+                    rightComponent={<Image style={styles.user} source={require('./../assets/users.png')}/>}
+                    containerStyle={{
+                        backgroundColor: '#F9DB53',
+                        height:100,
+                        justifyContent: 'space-around',
+                      }}
+  
+                />
                 <View style={styles.container}>
-                    <Header
-                        leftComponent={<Icon name="menu" onPress={() => this.props.navigation.openDrawer()} />}
-                    />
+                    
                     <View
                         style={{
                             height: 60,
@@ -113,7 +122,21 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 20,
         marginBottom: 20,
-    }
+    },
+    logo: {
+        width: 66,
+        height: 58,
+        margin: 30,
+    },
+    img: {
+        width: window.width ,
+        height: 200,
+    },
+    user: {
+        width: 50,
+        height: 50,
+        margin: 30,
+    },
 });
 
 
