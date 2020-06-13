@@ -28,8 +28,8 @@ const styles = StyleSheet.create({
         margin: 30,
     },
     img: {
-        width: window.width ,
-        height: 200,
+        width: 50 ,
+        height: 50,
     },
     user: {
         width: 50,
@@ -72,8 +72,17 @@ class Carte extends Component {
             <View>
             <Header
                     leftComponent={<Icon name="menu" onPress={() => this.props.navigation.openDrawer()} />}
-                    centerComponent={<Image style={styles.logo} source={require('./../assets/logo.png')}/>}
-                    rightComponent={<Image style={styles.user} source={require('./../assets/users.png')}/>}
+                    centerComponent={<TouchableOpacity activeOpacity = { .5 } onPress={()=> this.props.navigation.navigate("Home")}>
+ 
+                    <Image style={styles.img} source={require('./../assets/logo.png')} />
+                    
+                  </TouchableOpacity>} 
+                    rightComponent={<TouchableOpacity activeOpacity = { .5 } onPress={()=> this.props.navigation.navigate("Compte")}>
+                    <Image
+                    style={styles.user}
+                    source={require('./../assets/users.png')}
+                  />
+                  </TouchableOpacity>}
                     containerStyle={{
                         backgroundColor: '#EA335A',
                         height:100,

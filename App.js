@@ -248,6 +248,8 @@ import { createAppContainer } from 'react-navigation';
 import { Icon } from 'native-base';
 import HomePage from './Pages/HomePage';
 import Artiste from './Pages/Artiste';
+import Billeterie from './Pages/Billeterie';
+import Compte from './pages/Compte';
 import InformationsPage from './Pages/InformationsPage';
 import Carte from './Pages/Carte';
 import Photos from './Pages/Photos';
@@ -338,6 +340,23 @@ const Drawer = createDrawerNavigator({
      
     
   },
+  Compte: {
+    screen: Compte,
+    navigationOptions: {
+      headerTitle: 'Compte',
+      headerTintColor: '#A0123D',
+          headerStyle: {
+            backgroundColor: '#A0123D',
+            borderBottomColor: '#A0123D',
+            borderBottomWidth: 3,
+          },
+          headerTitleStyle: {
+            fontSize: 18,
+          },
+     
+    }
+
+  },
   Programme: {
     screen: Programme,
     navigationOptions: {
@@ -352,7 +371,8 @@ const Drawer = createDrawerNavigator({
   },
 
   Billeterie: {
-    screen: InformationsPage,
+    screen: Billeterie,
+    url: 'https://www.digitick.com/',
     navigationOptions: {
       headerTitle: 'Billeterie'
     }

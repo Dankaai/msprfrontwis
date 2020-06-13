@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Dimensions, StatusBar, ScrollView,Image} from 'react-native';
+import { View, Text, StyleSheet, Dimensions, TouchableOpacity, StatusBar, ScrollView,Image} from 'react-native';
 import { Header } from 'react-native-elements';
 import { Left, Right, Icon } from 'native-base';
 import { SafeAreaView } from 'react-navigation';
@@ -40,8 +40,17 @@ class HomePage extends Component {
             <View style={styles.container}>
             <Header
                     leftComponent={<Icon name="menu" onPress={() => this.props.navigation.openDrawer()} />}
-                    centerComponent={<Image style={styles.logo} source={require('./../assets/logo.png')}/>}
-                    rightComponent={<Image style={styles.user} source={require('./../assets/users.png')}/>}
+                    centerComponent={<TouchableOpacity activeOpacity = { .5 } onPress={()=> this.props.navigation.navigate("Home")}>
+ 
+                    <Image style={styles.logoAccueil} source={require('./../assets/logo.png')} />
+                    
+                  </TouchableOpacity>} 
+                    rightComponent={<TouchableOpacity activeOpacity = { .5 } onPress={()=> this.props.navigation.navigate("Compte")}>
+                    <Image
+                    style={styles.user}
+                    source={require('./../assets/users.png')}
+                  />
+                  </TouchableOpacity>}
                     containerStyle={{
                         backgroundColor: '#A0123D',
                         height:100,
@@ -164,6 +173,10 @@ const styles = StyleSheet.create({
     img: {
         width: window.width ,
         height: 200,
+    },
+    logoAccueil: {
+        width: 50 ,
+        height: 50,
     },
     user: {
         width: 50,
