@@ -8,17 +8,17 @@ import {
   StatusBar,
   ScrollView,
   Image,
-  TextInput,
-  Button,
 } from "react-native";
 import { Header } from "react-native-elements";
 import { Left, Right, Icon } from "native-base";
 import { SafeAreaView } from "react-navigation";
-import {UselessTextInput} from "../Components/UselessTextInput";
 
 const { height } = Dimensions.get("window");
 
-class Connexion extends Component {
+class HomePage extends Component {
+  constructor(props) {
+    super(props);
+  }
   state = {
     // We don't know the size of the content initially, and the probably won't instantly try to scroll, so set the initial content height to 0
     screenHeight: 0,
@@ -46,7 +46,7 @@ class Connexion extends Component {
               leftComponent={
                 <Icon
                   name="menu"
-                  onPress={() => this.props.navigation.openDrawer()}
+                  onPress={() => this.props.navigation.toggleDrawer()}
                 />
               }
               centerComponent={
@@ -63,7 +63,7 @@ class Connexion extends Component {
               rightComponent={
                 <TouchableOpacity
                   activeOpacity={0.5}
-                  onPress={() => this.props.navigation.navigate("Compte")}
+                  onPress={() => this.props.navigation.navigate("Connexion")}
                 >
                   <Image
                     style={styles.user}
@@ -78,19 +78,65 @@ class Connexion extends Component {
               }}
             />
 
-<TextInput
-      style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
-      placeholder={"Identifiant"}
-    />
-    <TextInput
-      style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
-      placeholder={"Mot de passe"}
-    />
+            <View
+              style={{
+                flexDirection: "row",
+                height: 50,
+                width: window.width,
+                backgroundColor: "#C58B9A",
+              }}
+            >
+              <Text>informations</Text>
+            </View>
 
-    <Button title="Connexion"
-  color="#841584">
-        
-    </Button>
+            <View>
+              <Image
+                style={styles.img}
+                source={require("./../assets/img001.jpg")}
+              />
+            </View>
+            <View>
+              <Image
+                style={styles.img}
+                source={require("./../assets/img002.jpg")}
+              />
+            </View>
+            <View>
+              <Image
+                style={styles.img}
+                source={require("./../assets/img003.jpg")}
+              />
+            </View>
+            <View>
+              <Image
+                style={styles.img}
+                source={require("./../assets/img004.jpg")}
+              />
+            </View>
+            <View>
+              <Image
+                style={styles.img}
+                source={require("./../assets/img004.jpg")}
+              />
+            </View>
+            <View>
+              <Image
+                style={styles.img}
+                source={require("./../assets/img002.jpg")}
+              />
+            </View>
+            <View>
+              <Image
+                style={styles.img}
+                source={require("./../assets/img002.jpg")}
+              />
+            </View>
+            <View>
+              <Image
+                style={styles.img}
+                source={require("./../assets/img002.jpg")}
+              />
+            </View>
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -130,4 +176,4 @@ const styles = StyleSheet.create({
     margin: 30,
   },
 });
-export default Connexion;
+export default HomePage;

@@ -3,9 +3,16 @@ import { Header } from 'react-native-elements';
 import { Left, Right, Icon } from 'native-base';
 import { SearchBar } from 'react-native-elements';
 import { AppRegistry, StyleSheet, Text, View, Button, Image, TouchableOpacity, SafeAreaView, Dimensions, Alert, ScrollView } from "react-native";
-
+import * as InformationAction from '../../actions/InformationAction';
 
 class InformationsPage extends Component {
+
+    componentDidMount() {
+        this.props.InformationAction.getInformations();
+    
+      }
+    
+      _keyExtractor = (item, index) => item.id;
     state = {
         searchQuery: '',
     };

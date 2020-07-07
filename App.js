@@ -87,7 +87,7 @@ const ConnexionStack = createStackNavigator({
 const AppStack = createStackNavigator({
   Home: {
     screen: HomePage,
-    navigationOptions: ({ navigation }) => ( {
+    navigationOptions: () => ( {
       headerTitle: 'Home',
       headerTintColor: '#A0123D',
           headerStyle: {
@@ -294,11 +294,11 @@ const AppContainer = createAppContainer(createSwitchNavigator(
   {
     Loading: Loading,
     Connexion: ConnexionStack,
-    App: AppStack,
+    AppStack: AppStack,
     Drawer: DrawerNav,
   },
   {
-    initialRouteName: 'App',
+    initialRouteName: 'Drawer',
   }
 ));
 
