@@ -74,13 +74,13 @@ class Carte extends Component {
                     leftComponent={<Icon name="menu" onPress={() => this.props.navigation.openDrawer()} />}
                     centerComponent={<TouchableOpacity activeOpacity = { .5 } onPress={()=> this.props.navigation.navigate("Home")}>
  
-                    <Image style={styles.img} source={require('./../assets/logo.png')} />
+                    <Image style={styles.img} source={require('../../../assets/logo.png')} />
                     
                   </TouchableOpacity>} 
                     rightComponent={<TouchableOpacity activeOpacity = { .5 } onPress={()=> this.props.navigation.navigate("Compte")}>
                     <Image
                     style={styles.user}
-                    source={require('./../assets/users.png')}
+                    source={require('../../../assets/users.png')}
                   />
                   </TouchableOpacity>}
                     containerStyle={{

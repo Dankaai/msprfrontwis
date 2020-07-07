@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { View } from "react-native";
 import { Text } from "native-base";
 import { connect } from "react-redux";
-import { clearMessages, stopLoading } from "../src/actions/AppAction";
+import { clearMessages, stopLoading } from "../../actions/AppAction";
 
 class Loading extends Component {
 	/**

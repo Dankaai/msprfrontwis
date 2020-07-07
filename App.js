@@ -4,28 +4,31 @@ import React, { Component } from 'react';
 import { Text, View, SafeAreaView, ScrollView, Dimensions, StyleSheet,TouchableOpacity, Image } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { Icon } from 'native-base';
-import HomePage from './Pages/HomePage';
-import Artiste from './Pages/Artiste';
-import Billeterie from './Pages/Billeterie';
-import Compte from './pages/Compte';
-import InformationsPage from './Pages/InformationsPage';
-import Carte from './Pages/Carte';
-import Photos from './Pages/Photos';
-import Connexion from './Pages/Connexion';
-import Programme from './Pages/Programme';
-import Partenaire from './Pages/Partenaire';
+import HomePage from './src/Components/Pages/HomePage';
+import Artiste from './src/Components/Pages/Artiste';
+import Billeterie from './src/Components/Pages/Billeterie';
+import Compte from './src/Components/Pages/Compte';
+import InformationsPage from './src/Components/Pages/InformationsPage';
+import Carte from './src/Components/Pages/Carte';
+import Photos from './src/Components/Pages/Photos';
+import Connexion from './src/Components/Pages/Connexion';
+import Programme from './src/Components/Pages/Programme';
+import Partenaire from './src/Components/Pages/Partenaire';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 import { DrawerItems } from 'react-navigation-drawer';
 import { createStackNavigator } from 'react-navigation-stack';
 import {createSwitchNavigator} from 'react-navigation';
 
-import Loading from "./Pages/Loading";
+import Loading from "./src/Components/Pages/Loading";
+import { Provider } from 'react-redux';
+import {store} from './src/store/configureStore';
 
-
-
-class App extends Component {
+export default class App extends Component {
 	render() {
-		return <AppContainer />;
+		return (
+    <Provider store={store}>
+      <AppContainer />
+      </Provider>);
 	}
 }
 
@@ -302,4 +305,6 @@ const AppContainer = createAppContainer(createSwitchNavigator(
   }
 ));
 
-export default AppContainer;
+
+
+//export default AppContainer;

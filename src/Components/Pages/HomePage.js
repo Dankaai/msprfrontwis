@@ -56,7 +56,7 @@ class HomePage extends Component {
                 >
                   <Image
                     style={styles.logoAccueil}
-                    source={require("./../assets/logo.png")}
+                    source={require("../../../assets/logo.png")}
                   />
                 </TouchableOpacity>
               }
@@ -67,7 +67,7 @@ class HomePage extends Component {
                 >
                   <Image
                     style={styles.user}
-                    source={require("./../assets/users.png")}
+                    source={require("../../../assets/users.png")}
                   />
                 </TouchableOpacity>
               }
@@ -92,49 +92,49 @@ class HomePage extends Component {
             <View>
               <Image
                 style={styles.img}
-                source={require("./../assets/img001.jpg")}
+                source={require("../../../assets/img001.jpg")}
               />
             </View>
             <View>
               <Image
                 style={styles.img}
-                source={require("./../assets/img002.jpg")}
+                source={require("../../../assets/img002.jpg")}
               />
             </View>
             <View>
               <Image
                 style={styles.img}
-                source={require("./../assets/img003.jpg")}
+                source={require("../../../assets/img003.jpg")}
               />
             </View>
             <View>
               <Image
                 style={styles.img}
-                source={require("./../assets/img004.jpg")}
+                source={require("../../../assets/img004.jpg")}
               />
             </View>
             <View>
               <Image
                 style={styles.img}
-                source={require("./../assets/img004.jpg")}
+                source={require("../../../assets/img004.jpg")}
               />
             </View>
             <View>
               <Image
                 style={styles.img}
-                source={require("./../assets/img002.jpg")}
+                source={require("../../../assets/img002.jpg")}
               />
             </View>
             <View>
               <Image
                 style={styles.img}
-                source={require("./../assets/img002.jpg")}
+                source={require("../../../assets/img002.jpg")}
               />
             </View>
             <View>
               <Image
                 style={styles.img}
-                source={require("./../assets/img002.jpg")}
+                source={require("../../../assets/img002.jpg")}
               />
             </View>
           </View>

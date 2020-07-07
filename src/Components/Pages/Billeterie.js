@@ -30,7 +30,7 @@ export default class billeterie extends Component {
             >
               <Image
                 style={styles.img}
-                source={require("./../assets/logo.png")}
+                source={require("../../../assets/logo.png")}
               />
             </TouchableOpacity>
           }
@@ -41,7 +41,7 @@ export default class billeterie extends Component {
             >
               <Image
                 style={styles.user}
-                source={require("./../assets/users.png")}
+                source={require("../../../assets/users.png")}
               />
             </TouchableOpacity>
           }

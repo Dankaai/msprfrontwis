@@ -2,17 +2,19 @@ import React, { Component } from 'react';
 import { Header } from 'react-native-elements';
 import { Left, Right, Icon } from 'native-base';
 import { SearchBar } from 'react-native-elements';
-import { AppRegistry, StyleSheet, Text, View, Button, Image, TouchableOpacity, SafeAreaView, Dimensions, Alert, ScrollView } from "react-native";
+import { AppRegistry,FlatList, StyleSheet, Text, View, Button, Image, TouchableOpacity, SafeAreaView, Dimensions, Alert, ScrollView } from "react-native";
 import * as InformationAction from '../../actions/InformationAction';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+
 
 class InformationsPage extends Component {
-
     componentDidMount() {
         this.props.InformationAction.getInformations();
     
       }
-    
-      _keyExtractor = (item, index) => item.id;
+
     state = {
         searchQuery: '',
     };
@@ -20,6 +22,7 @@ class InformationsPage extends Component {
     _onChangeSearch = query => this.setState({ searchQuery: query });
 
     render() {
+
         const window = Dimensions.get('window');
         const { searchQuery } = this.state;
         return (
@@ -28,13 +31,13 @@ class InformationsPage extends Component {
                     leftComponent={<Icon name="menu" onPress={() => this.props.navigation.openDrawer()} />}
                     centerComponent={<TouchableOpacity activeOpacity = { .5 } onPress={()=> this.props.navigation.navigate("Home")}>
  
-                    <Image style={styles.img} source={require('./../assets/logo.png')} />
+                    <Image style={styles.img} source={require('../../../assets/logo.png')} />
                     
                   </TouchableOpacity>} 
                     rightComponent={<TouchableOpacity activeOpacity = { .5 } onPress={()=> this.props.navigation.navigate("Compte")}>
                     <Image
                     style={styles.user}
-                    source={require('./../assets/users.png')}
+                    source={require('../../../assets/users.png')}
                   />
                   </TouchableOpacity>}
                     containerStyle={{
@@ -78,35 +81,15 @@ class InformationsPage extends Component {
                     <Text style={styles.titleInfo}>
                         Comment faire ceci
         </Text>
-                    <Text style={styles.info}>
-                        BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla
-                        BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla
-                        BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla
-                        BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla
-                        BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla
-        </Text>
+              <FlatList>
+                  data= {this.props.items}
+                  keyExtractor={item => item.Id_information}
+                  renderItem= {({ item }) => <Text>
+                      {item.Id_information}
+                  </Text>
+    };
 
-                    <Text style={styles.titleInfo}>
-                        Comment faire cela
-        </Text>
-                    <Text style={styles.info}>
-                        BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla
-                        BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla
-                        BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla
-                        BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla
-                        BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla
-        </Text>
-
-                    <Text style={styles.titleInfo}>
-                        Comment faire les deux
-        </Text>
-                    <Text style={styles.info}>
-                        BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla
-                        BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla
-                        BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla
-                        BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla
-                        BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla
-        </Text>
+              </FlatList>
 
                 </View>
 
@@ -154,5 +137,16 @@ const styles = StyleSheet.create({
     },
 });
 
+function mapStateToProps(state) {
+	return {
+		informations: state.informations
+	};
+}
 
-export default InformationsPage;
+function mapDispatchToProps(dispatch) {
+	return {
+		InformationAction: bindActionCreators(InformationAction, dispatch)
+	};
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(InformationsPage);

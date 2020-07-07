@@ -56,7 +56,7 @@ class Connexion extends Component {
                 >
                   <Image
                     style={styles.logoAccueil}
-                    source={require("./../assets/logo.png")}
+                    source={require("../../../assets/logo.png")}
                   />
                 </TouchableOpacity>
               }
@@ -67,7 +67,7 @@ class Connexion extends Component {
                 >
                   <Image
                     style={styles.user}
-                    source={require("./../assets/users.png")}
+                    source={require("../../../assets/users.png")}
                   />
                 </TouchableOpacity>
               }

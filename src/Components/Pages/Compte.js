@@ -14,7 +14,6 @@ import {
 import { Header } from "react-native-elements";
 import { Left, Right, Icon } from "native-base";
 import { SafeAreaView } from "react-navigation";
-import {UselessTextInput} from "../Components/UselessTextInput";
 
 const { height } = Dimensions.get("window");
 
@@ -56,7 +55,7 @@ class Compte extends Component {
                 >
                   <Image
                     style={styles.logoAccueil}
-                    source={require("./../assets/logo.png")}
+                    source={require("../../../assets/logo.png")}
                   />
                 </TouchableOpacity>
               }
@@ -67,7 +66,7 @@ class Compte extends Component {
                 >
                   <Image
                     style={styles.user}
-                    source={require("./../assets/users.png")}
+                    source={require("../../../assets/users.png")}
                   />
                 </TouchableOpacity>
               }
