@@ -11,6 +11,10 @@ const { height } = Dimensions.get('window');
  
  
 class HomePage extends Component {
+    constructor(props) {
+        super(props)
+
+    }
     state = {
         // We don't know the size of the content initially, and the probably won't instantly try to scroll, so set the initial content height to 0
         screenHeight: 0,
@@ -39,13 +43,15 @@ class HomePage extends Component {
  
             <View style={styles.container}>
             <Header
-                    leftComponent={<Icon name="menu" onPress={() => this.props.navigation.openDrawer()} />}
+                    leftComponent={<TouchableOpacity onPress={() => this.props.navigation.openDrawer() }>
+                        <Icon name="menu"/>
+                        </TouchableOpacity>}
                     centerComponent={<TouchableOpacity activeOpacity = { .5 } onPress={()=> this.props.navigation.navigate("Home")}>
  
                     <Image style={styles.logoAccueil} source={require('./../assets/logo.png')} />
                     
                   </TouchableOpacity>} 
-                    rightComponent={<TouchableOpacity activeOpacity = { .5 } onPress={()=> this.props.navigation.navigate("Compte")}>
+                    rightComponent={<TouchableOpacity activeOpacity = { .5 } onPress={()=> this.props.navigation.navigate("Connexion")}>
                     <Image
                     style={styles.user}
                     source={require('./../assets/users.png')}

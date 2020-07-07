@@ -18,7 +18,7 @@ import {UselessTextInput} from "../Components/UselessTextInput";
 
 const { height } = Dimensions.get("window");
 
-class Compte extends Component {
+class Connexion extends Component {
   state = {
     // We don't know the size of the content initially, and the probably won't instantly try to scroll, so set the initial content height to 0
     screenHeight: 0,
@@ -78,12 +78,19 @@ class Compte extends Component {
               }}
             />
 
-<Text>
-    Nom Prenom
-</Text>
-<Text>Type de billet</Text>
-<Text>Mes rendez-vous immanquables !</Text>
-<Text>Mes artistes</Text>
+<TextInput
+      style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+      placeholder={"Identifiant"}
+    />
+    <TextInput
+      style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+      placeholder={"Mot de passe"}
+    />
+
+    <Button title="Connexion"
+  color="#841584">
+        
+    </Button>
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -123,4 +130,4 @@ const styles = StyleSheet.create({
     margin: 30,
   },
 });
-export default Compte;
+export default Connexion;
