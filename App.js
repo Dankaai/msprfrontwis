@@ -18,19 +18,12 @@ import { createDrawerNavigator } from 'react-navigation-drawer';
 import { DrawerItems } from 'react-navigation-drawer';
 import { createStackNavigator } from 'react-navigation-stack';
 import {createSwitchNavigator} from 'react-navigation';
-
+import ReactDOM from 'react-dom';
 import Loading from "./src/Components/Pages/Loading";
 import { Provider } from 'react-redux';
-import {store} from './src/store/configureStore';
+import configureStore from './src/store/configureStore';
 
-export default class App extends Component {
-	render() {
-		return (
-    <Provider store={store}>
-      <AppContainer />
-      </Provider>);
-	}
-}
+
 
 const styles = StyleSheet.create({
   container: {
@@ -72,7 +65,7 @@ const CustomDrawerNavigation = (props) => {
       <View style={{ alignItems: "center", bottom: 20 }}>
         <View style={{ flexDirection: 'row' }}>
           <View style={{ flexDirection: 'column', marginRight: 15, opacity:1 }}>
-            <Image source={require('./assets/users.png')} name="users.png" style={{ fontSize: 24 }} onPress={() => console.log("Tıkladın")} />
+            <Image source={require('./assets/users.png')} name="users.png"  onPress={() => console.log("Tıkladın")} />
           </View>
         </View>
       </View>
@@ -305,6 +298,17 @@ const AppContainer = createAppContainer(createSwitchNavigator(
   }
 ));
 
+const store = configureStore();
+
+export default class App extends Component {
+	render() {
+		return (
+      ReactDOM.render(<Provider store={store}><AppContainer /></Provider>, 
+        document.getElementById('root'))
+      
+     );
+	}
+}
 
 
 //export default AppContainer;

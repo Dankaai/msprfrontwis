@@ -6,26 +6,52 @@ import { AppRegistry,FlatList, StyleSheet, Text, View, Button, Image, TouchableO
 import * as InformationAction from '../../actions/InformationAction';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import axios from 'axios';
 
 
 
 class InformationsPage extends Component {
+    // Components/Search.js
+
+constructor(props) {
+    super(props)
+    this.state = { informations: [],
+        searchQuery: '', }
+}
+    
+
     componentDidMount() {
-        this.props.InformationAction.getInformations();
+
+    axios.get('http://localhost/msprfront/information').then(response => {
+
+            this.setState({informations: response.data.information});
+    });
+
+        //this.props.InformationAction.getInformations();
     
       }
 
-    state = {
-        searchQuery: '',
-    };
-
+      FlatListSeparator = () => {
+        return (
+            <View style={{
+                height: .5,
+                width: "100%",
+                backgroundColor: "rgba(0,0,0,0.5)",
+            }}
+            />
+        );
+    }
     _onChangeSearch = query => this.setState({ searchQuery: query });
 
     render() {
+        
+    console.log(this.state.informations.information);
 
         const window = Dimensions.get('window');
-        const { searchQuery } = this.state;
+        const infos = this.state.informations;
+        const { searchQuery } = this.state.searchQuery;
         return (
+            
             <View>
                 <Header
                     leftComponent={<Icon name="menu" onPress={() => this.props.navigation.openDrawer()} />}
@@ -78,18 +104,10 @@ class InformationsPage extends Component {
                 </View>
                 <View style={styles.blocinfo}>
 
-                    <Text style={styles.titleInfo}>
-                        Comment faire ceci
-        </Text>
-              <FlatList>
-                  data= {this.props.items}
-                  keyExtractor={item => item.Id_information}
-                  renderItem= {({ item }) => <Text>
-                      {item.Id_information}
-                  </Text>
-    };
 
-              </FlatList>
+        <ul>
+                {infos.map(information => <li> date: {information.date} information niveau: {information.niveau} information: {information.texte} </li>)}
+        </ul>
 
                 </View>
 

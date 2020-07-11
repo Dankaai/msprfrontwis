@@ -5,7 +5,7 @@ import *  as types from '../constants/ActionTypes';
 
 export function getInformations() {
     return (dispatch) => {
-        const url = `${Constants.URL.wc}/information`
+        const url = `http://localhost/msprfront/information`
         
         return axios.get(url).then(response => {
             dispatch({
