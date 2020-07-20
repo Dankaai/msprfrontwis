@@ -76,7 +76,19 @@ class Compte extends Component {
                 justifyContent: "space-around",
               }}
             />
-
+            <View style={styles.container}>
+          <View
+            style={{
+              height: 60,
+              width: window.width,
+              backgroundColor: "#C58B9A",
+            }}
+          >
+            <View style={styles.containerTitle}>
+              <Text style={styles.titleText}>Mon compte</Text>
+            </View>
+          </View>
+        </View>
 <Text>
     Nom Prenom
 </Text>
@@ -93,6 +105,14 @@ class Compte extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  containerTitle: {
+    alignItems: "center",
+  },
+  titleText: {
+    fontSize: 40,
+    fontWeight: "bold",
+    color: "#A0123D",
   },
   scrollView: {
     backgroundColor: "blue",

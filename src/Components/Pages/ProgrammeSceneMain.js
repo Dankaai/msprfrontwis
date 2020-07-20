@@ -18,7 +18,6 @@ import { getCurrentFrame } from "expo/build/AR";
 import axios from "axios";
 import { SearchBar } from "react-native-elements";
 
-
 const window = Dimensions.get("window");
 
 const styles = StyleSheet.create({
@@ -38,6 +37,12 @@ const styles = StyleSheet.create({
     color: "#2761F6",
     padding: 15,
     textAlign: "center",
+  },
+  choixProg: {
+    fontSize: 12,
+    fontWeight: "bold",
+    color: "#2761F6",
+    
   },
 
   info: {
@@ -67,7 +72,7 @@ const styles = StyleSheet.create({
   },
 });
 
-class Programme extends Component {
+class ProgrammeSceneMain extends Component {
   constructor(props) {
     super(props);
     //initialisation des states informations et artistes
@@ -77,7 +82,7 @@ class Programme extends Component {
   componentDidMount() {
     
     //récupération de l'API avec axios. Ensuite je met les artistes que l'on récupère de l'api dans le state artistes
-    axios.get("http://localhost/msprfront/programmeLittleSound").then((response) => {
+    axios.get("http://localhost/msprfront/programmeMainStage").then((response) => {
       this.setState({ artistes: response.data.concert });
     });
   }
@@ -151,26 +156,45 @@ return (
     <View style={styles.container}>
       <View
         style={{
-          height: 60,
+          height: 100,
           width: window.width,
           backgroundColor: "#88AEF7",
           flexDirection: "row",
           justifyContent: "space-between",
+          alignContent: "stretch",
+          alignItems: "center",
+          flex: 1,
         }}
       >
-        <Button
-            title="Par scène"
-            color="#2761F6"
-            onPress={() => this.props.navigation.navigate("ProgrammeSceneMain")}
-          />
-          <Text style= {styles.dayText}>Little Sound</Text>
-          <Button
-            title="Par date"
-            color="#2761F6"
-            onPress={() =>
-              Alert.alert("Button with adjusted color pressed")
-            }
-          />
+        <TouchableOpacity
+                  activeOpacity={0.5}
+                  backgroundColor= "#2761F6"
+                  onPress={() => this.props.navigation.navigate("LittleSound")}
+                >
+                  <Text style = {styles.choixProg}>Little Sound</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  activeOpacity={0.5}
+                  backgroundColor= "#2761F6"
+                  onPress={() => this.props.navigation.navigate("Vendredi")}
+                >
+                  <Text style = {styles.choixProg}>Vendredi</Text>
+                </TouchableOpacity>
+              
+              <Text style= {styles.dayText}> Main Stage</Text>
+              <TouchableOpacity
+                  activeOpacity={0.5}
+                  backgroundColor= "#2761F6"
+                  onPress={() => this.props.navigation.navigate("Samedi")}
+                >
+                  <Text style = {styles.choixProg}>Samedi</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  activeOpacity={0.5}
+                  onPress={() => this.props.navigation.navigate("Dimanche")}
+                >
+                  <Text style = {styles.choixProg}>Dimanche</Text>
+                </TouchableOpacity>
       </View>
       
       <View>
@@ -181,4 +205,4 @@ return (
 );
 }
 }
-export default Programme;
+export default ProgrammeSceneMain;
